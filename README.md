@@ -1,10 +1,9 @@
-# OmniTool - Your All-in-One Toolkit
+# OmniTool — A Minimal Launcher for Small Utilities
 
-A modern, comprehensive multi-tool application with a beautiful launcher interface built with **clean architecture** and **design patterns**.
+A lightweight, extensible multi-tool launcher built with a clean architecture approach.
 
-[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![PyQt6](https://img.shields.io/badge/PyQt6-6.6+-green.svg)](https://www.riverbankcomputing.com/software/pyqt/)
-[![License](https://img.shields.io/badge/License-Educational-orange.svg)](LICENSE)
 
 ---
 
@@ -46,12 +45,6 @@ sudo apt install ffmpeg  # Ubuntu/Debian
 ```bash
 # Launch the main launcher
 python main.py
-
-# Launch a specific tool directly
-python main.py --tool youtube_downloader
-
-# Launch CLI mode
-python main.py --cli
 ```
 
 ---
@@ -71,16 +64,10 @@ Add your own tools easily! See [Developer Guide](docs/DEVELOPER_GUIDE.md)
 All documentation is organized in the **[docs/](docs/)** directory:
 
 ### For Users
-- **[Quick Start Guide](docs/QUICKSTART.md)** - Get started in 5 minutes
-- **[Complete User Guide](docs/OMNITOOL_GUIDE.md)** - All features explained
+- **[Complete User Guide](docs/USER_GUIDE.md)** - All features explained
 
 ### For Developers
-- **[Quick Add Tool Guide](docs/QUICK_ADD_TOOL.md)** ⭐ - Add tools in 3 steps
 - **[Developer Guide](docs/DEVELOPER_GUIDE.md)** - Complete development docs
-- **[Architecture Guide](docs/ARCHITECTURE.md)** - Design patterns & structure
-
-### Browse All Docs
-- **[Documentation Index](docs/README.md)** - Full documentation navigation
 
 ---
 
@@ -89,7 +76,7 @@ All documentation is organized in the **[docs/](docs/)** directory:
 ```
 OmniTool/
 ├── main.py                  # Entry point
-├── launcher_clean.py        # Main launcher UI
+├── launcher.py              # Main launcher UI
 ├── requirements.txt         # Dependencies
 ├── README.md               # This file
 │
@@ -99,16 +86,14 @@ OmniTool/
 │   └── app_manager_clean.py # Manager
 │
 ├── tools/                  # All tools here
-│   └── ytDownloader/      # Example tool
+│   └── youtube_downloader/ # Example tool
 │       ├── tool.py        # Tool registration
-│       ├── pyqt_gui.py    # UI implementation
-│       └─��� downloader.py  # Business logic
+│       ├── window.py      # UI implementation
+│       └── downloader.py  # Business logic
 │
 └── docs/                   # Documentation
-    ��── README.md          # Docs index
-    ├── QUICKSTART.md      # User guide
     ├── DEVELOPER_GUIDE.md # Dev guide
-    └── ...               # More docs
+    └── USER_GUIDE.md      # User guide
 ```
 
 ---
@@ -154,7 +139,7 @@ python main.py
 
 **That's it!** Your tool appears automatically in the launcher.
 
-📖 **Full Guide:** [docs/QUICK_ADD_TOOL.md](docs/QUICK_ADD_TOOL.md)
+📖 **Full Guide:** [docs/DEVELOPER_GUIDE.md](docs/DEVELOPER_GUIDE.md)
 
 ---
 
@@ -167,8 +152,6 @@ OmniTool uses professional software design patterns:
 - **Facade** - Simple API
 - **Singleton** - Centralized management
 - **Decorator** - Clean tool registration
-
-Learn more: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
 ---
 
@@ -193,7 +176,7 @@ This project is for educational purposes. Individual tools may have their own li
 
 Contributions are welcome! To add a tool:
 
-1. Follow the [Quick Add Tool Guide](docs/QUICK_ADD_TOOL.md)
+1. Follow the [Developer Guide](docs/DEVELOPER_GUIDE.md)
 2. Test your tool thoroughly
 3. Submit a pull request
 
@@ -212,29 +195,13 @@ pip install -r requirements.txt
 ```
 
 ### More issues?
-See [docs/QUICKSTART.md](docs/QUICKSTART.md) troubleshooting section.
-
----
-
-## 🎯 Next Steps
-
-1. **Launch the app**: `python main.py`
-2. **Read the docs**: Check [docs/README.md](docs/README.md)
-3. **Add your first tool**: Follow [docs/QUICK_ADD_TOOL.md](docs/QUICK_ADD_TOOL.md)
+See [docs/USER_GUIDE.md](docs/USER_GUIDE.md) for troubleshooting section.
 
 ---
 
 ## 📊 Project Stats
 
-- **Architecture**: Clean Architecture with Design Patterns
 - **UI Framework**: PyQt6
-- **Python Version**: 3.7+
+- **Python Version**: 3.10+
 - **Tools**: Extensible plugin system
-- **Documentation**: 8 comprehensive guides
-
----
-
-**Made with ❤️ using Python & PyQt6**
-
-🚀 **Start now:** `python main.py`
-
+- **Documentation**: 2 focused guides
