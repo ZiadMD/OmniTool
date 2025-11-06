@@ -263,10 +263,10 @@ class OmniToolLauncher(QMainWindow):
         """Create footer"""
         footer = QWidget()
         footer.setStyleSheet("QWidget { background-color: #2c3e50; padding: 15px; }")
-        footer.setMaximumHeight(50)
+        footer.setMaximumHeight(60)
 
         footer_layout = QHBoxLayout(footer)
-        footer_text = QLabel("OmniTool v1.0 | Clean Architecture | Made with ❤️ using Python & PyQt6")
+        footer_text = QLabel("OmniTool v1.0 | All you need in one place.")
         footer_text.setFont(QFont("Segoe UI", 9))
         footer_text.setStyleSheet("color: white;")
 
