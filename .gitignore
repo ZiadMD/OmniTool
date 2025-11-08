@@ -43,3 +43,5 @@ Thumbs.db
 *.log
 .cache/
 
+# Node modules
+node_modules/
