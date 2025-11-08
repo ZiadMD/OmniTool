@@ -196,17 +196,22 @@ class YouTubeDownloader:
                         'type': 'playlist',
                         'title': info.get('title', 'Unknown Playlist'),
                         'count': len(list(info['entries'])),
-                        'uploader': info.get('uploader', 'Unknown')
+                        'uploader': info.get('uploader', 'Unknown'),
+                        'thumbnail': info.get('thumbnail', ''),
+                        'description': info.get('description', '')
                     }
                 else:
-                    # Single video
+                    # Single video - return full info including formats
                     return {
                         'status': 'success',
                         'type': 'video',
                         'title': info.get('title', 'Unknown'),
                         'duration': info.get('duration', 0),
                         'uploader': info.get('uploader', 'Unknown'),
-                        'view_count': info.get('view_count', 0)
+                        'view_count': info.get('view_count', 0),
+                        'description': info.get('description', ''),
+                        'thumbnail': info.get('thumbnail', ''),
+                        'formats': info.get('formats', [])
                     }
 
         except Exception as error:

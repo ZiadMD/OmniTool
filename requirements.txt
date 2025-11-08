@@ -5,3 +5,5 @@ PyQt6>=6.6.0
 requests>=2.31.0
 Pillow>=10.0.0
 
+# UI Template System (optional - for YAML support)
+# PyYAML>=6.0.1

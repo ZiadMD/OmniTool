@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniTool</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <nav class="top-navbar">
+            <div class="navbar-brand">
+                <span class="brand-icon">🛠️</span>
+                <span class="brand-text">OmniTool</span>
+                <span class="brand-version">v1.0.0</span>
+            </div>
+            
+            <div class="navbar-search">
+                <input type="text" id="searchInput" placeholder="Search tools..." autocomplete="off">
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <div class="navbar-actions">
+                <button class="nav-btn" id="settingsBtn" title="Settings">
+                    <span>⚙️</span>
+                </button>
+                <button class="nav-btn" id="aboutBtn" title="About">
+                    <span>ℹ️</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div id="app-view">
+                <!-- Views will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- API Check - Must load first -->
+    <script src="js/apiCheck.js"></script>
+    
+    <!-- Component Scripts -->
+    <script src="js/components/toolCard.js"></script>
+    <script src="js/components/homeView.js"></script>
+    <script src="js/components/youtubeDownloader.js"></script>
+    <script src="js/components/settingsView.js"></script>
+    <script src="js/components/aboutView.js"></script>
+    <script src="js/router.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

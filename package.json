@@ -1,0 +1,59 @@
+{
+  "name": "omnitool",
+  "version": "1.0.0",
+  "description": "OmniTool - Multi-purpose desktop application with YouTube downloader",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac"
+  },
+  "keywords": [
+    "youtube",
+    "downloader",
+    "electron",
+    "desktop"
+  ],
+  "author": "ZiadMD",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "python-shell": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.ziadmd.omnitool",
+    "productName": "OmniTool",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*",
+      "web/**/*",
+      "core/**/*.py",
+      "tools/**/*.py",
+      "assets/**/*",
+      "main.py",
+      "launcher.py",
+      "requirements.txt"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  }
+}
