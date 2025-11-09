@@ -85,11 +85,12 @@ class YouTubeDownloader:
                 'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
                 'outtmpl': os.path.join(self.download_directory, '%(title)s.%(ext)s'),
                 'progress_hooks': [self._progress_hook],
-                'quiet': False,
-                'no_warnings': False,
+                'quiet': True,  # Changed to True to avoid yt-dlp output interfering
+                'no_warnings': True,  # Changed to True
                 'ignoreerrors': False,
                 'merge_output_format': 'mp4',
                 'nooverwrites': True,
+                'noprogress': True,  # Disable yt-dlp's own progress bar
             }
 
             with yt_dlp.YoutubeDL(options) as ydl:
@@ -133,9 +134,10 @@ class YouTubeDownloader:
                 'format': 'bestaudio/best',
                 'outtmpl': os.path.join(self.download_directory, '%(title)s.%(ext)s'),
                 'progress_hooks': [self._progress_hook],
-                'quiet': False,
-                'no_warnings': False,
+                'quiet': True,  # Changed to True
+                'no_warnings': True,  # Changed to True
                 'ignoreerrors': False,
+                'noprogress': True,  # Disable yt-dlp's own progress bar
                 'postprocessors': [{
                     'key': 'FFmpegExtractAudio',
                     'preferredcodec': 'mp3',

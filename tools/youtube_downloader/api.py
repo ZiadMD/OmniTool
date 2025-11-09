@@ -9,6 +9,9 @@ import json
 import argparse
 from pathlib import Path
 
+# Force unbuffered output for real-time progress updates
+sys.stdout.reconfigure(line_buffering=True)
+
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
